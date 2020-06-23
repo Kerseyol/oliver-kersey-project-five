@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Kerseyol/oliver-kersey-project-five/static/css/main.5a4814c4.chunk.css",
+    "main.js": "/Kerseyol/oliver-kersey-project-five/static/js/main.66e42ff4.chunk.js",
+    "main.js.map": "/Kerseyol/oliver-kersey-project-five/static/js/main.66e42ff4.chunk.js.map",
+    "runtime-main.js": "/Kerseyol/oliver-kersey-project-five/static/js/runtime-main.9e916115.js",
+    "runtime-main.js.map": "/Kerseyol/oliver-kersey-project-five/static/js/runtime-main.9e916115.js.map",
+    "static/js/2.26693ed8.chunk.js": "/Kerseyol/oliver-kersey-project-five/static/js/2.26693ed8.chunk.js",
+    "static/js/2.26693ed8.chunk.js.map": "/Kerseyol/oliver-kersey-project-five/static/js/2.26693ed8.chunk.js.map",
+    "index.html": "/Kerseyol/oliver-kersey-project-five/index.html",
+    "precache-manifest.8c33c9c367e7813d3e0dfac2090bf673.js": "/Kerseyol/oliver-kersey-project-five/precache-manifest.8c33c9c367e7813d3e0dfac2090bf673.js",
+    "service-worker.js": "/Kerseyol/oliver-kersey-project-five/service-worker.js",
+    "static/css/main.5a4814c4.chunk.css.map": "/Kerseyol/oliver-kersey-project-five/static/css/main.5a4814c4.chunk.css.map",
+    "static/js/2.26693ed8.chunk.js.LICENSE.txt": "/Kerseyol/oliver-kersey-project-five/static/js/2.26693ed8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9e916115.js",
+    "static/js/2.26693ed8.chunk.js",
+    "static/css/main.5a4814c4.chunk.css",
+    "static/js/main.66e42ff4.chunk.js"
+  ]
+}
