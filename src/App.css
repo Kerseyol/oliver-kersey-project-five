@@ -48,6 +48,8 @@ body h2 {
 }
 
 
-img {
-  max-width: 90%;
+.artworkDisplay img {
+  max-width: 80%;
+  border: 30px solid gold;
+  /* border-image-source: url(./assets/goldFrame.png); */
 }
