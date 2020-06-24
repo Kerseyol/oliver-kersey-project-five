@@ -16,7 +16,6 @@ class App extends Component {
   }
   
   handleClick = (event) => {
-    // console.log(event.currentTarget.value);
     this.setState({
       isClick: true,
       animalChoice: event.currentTarget.value,
