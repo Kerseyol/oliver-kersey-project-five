@@ -12,6 +12,9 @@ class ArtSearch extends Component {
       objectDetails: [],
     };
   }
+
+//   A variable is created to contain the user's selection from the App.js
+// The MET's Search endpoint is called with the user's selection query inserted 
   getApiData = () => {
     let artResult;
     axios({
@@ -23,6 +26,7 @@ class ArtSearch extends Component {
         hasImages: true,
       },
     })
+    // The resulting array of Object IDs is mapped and fed through a randomizing function to produce a single ID's return
       .then((artArray) => {
         artArray = artArray.data.objectIDs;
         artResult = artArray[Math.floor(Math.random() * artArray.length)];
@@ -30,6 +34,8 @@ class ArtSearch extends Component {
           artArray,
         });
       })
+    //   The Object ID is then added to the end of the Objects endpoint from the MET's API
+    //  in order to obtain the full object data for the individual art piece
       .then(() => {
         axios({
           url: `https://collectionapi.metmuseum.org/public/collection/v1/objects/${artResult}`,
@@ -42,42 +48,28 @@ class ArtSearch extends Component {
           });
         });
       });
-  };
+    };
+
   componentDidMount() {
     this.getApiData();
   }
-
+//   The current choice of search query is compared to the previous selection, if different the
+// search goes through 
   componentDidUpdate(prevProps) {
     if (this.props.userChoice !== prevProps.userChoice) {
       this.getApiData();
     }
   }
-
+  //    A variety of object data from the randomized art piece selection can then be populated into the main page
   render() {
     return (
       <div className="artworkDisplay">
         <h2>{this.artResult}</h2>
-        <h2>{this.state.objectDetails && this.state.objectDetails.title}</h2>
-        <img src={this.state.objectDetails && this.state.objectDetails.primaryImage}></img>
-        {/* <a href='https://pngtree.com/so/decorative-border'>decorative-border png from pngtree.com</a> */}
+        <h2>Title: "{this.state.objectDetails && this.state.objectDetails.title}", Artist: "{this.state.objectDetails && this.state.objectDetails.artistDisplayName}"</h2>
+        <img src={this.state.objectDetails && this.state.objectDetails.primaryImage} alt={this.state.objectDetails && this.state.objectDetails.title}></img>
       </div>
     );
-  }
 }
-// <img src={this.state.artResult.primaryImage}></img>
-// <img src={this.state.finalArtwork.primaryImage} alt={this.state.finalArtwork.title}></img>
+}
+
 export default ArtSearch;
-// console.log(objectDetails)
-// }).then( (response) => {
-//     console.log(response);
-//     this.setState({
-//         finalArtwork: response.data
-//     })
-    // console.log(objectDetails)
-    // <img src={this.state.finalArtwork.primaryImage} alt={this.state.finalArtwork.title}></img>
-    // <img src={this.state.artResult.primaryImage}></img>
-// }).then( (response) => {
-//     console.log(response);
-//     this.setState({
-//         finalArtwork: response.data
-//     })

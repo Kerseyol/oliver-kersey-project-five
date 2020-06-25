@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-// import ArtResult from './ArtResult';
 import ArtSearch from './ArtSearch';
 import axios from 'axios';
 import './App.css';
-
 
 class App extends Component {
   
@@ -15,6 +13,7 @@ class App extends Component {
     }
   }
   
+  //on a button click, the choice's value is stored in the state.
   handleClick = (event) => {
     this.setState({
       isClick: true,
@@ -26,18 +25,25 @@ class App extends Component {
     return (
       <div className="mainPage">
       <h1>Animals @ The Met!</h1>
-      <h2>Press a button below to see a piece of artwork from the Metropolitan Museum of Art featuring the corresponding animal!</h2>
+      <h3>Press a button below to see a piece of artwork from the Metropolitan Museum of Art featuring the corresponding animal!</h3>
       
-      <div className="buttonAlignment">
-        <button value="tags:horse" onClick={this.handleClick}>Horses</button>
-        <button value="tags:dog" onClick={this.handleClick}>Dogs</button>
-        <button value="tags:bird" onClick={this.handleClick}>Birds</button>
-        <button value="tags:terms:dragon" onClick={this.handleClick}>Dragons</button>
-      </div>
-      
-      {
-        this.state.isClick ? <ArtSearch userChoice = {this.state.animalChoice}/> : null
-      }
+      <section className="finalArrangement">
+
+        <div className="buttonAlignment">
+          <button value="horses" onClick={this.handleClick}><a href="#">Horses</a></button>
+          <button value="tags:dog" onClick={this.handleClick}><a href="#">Dogs</a></button>
+          <button value="birds" onClick={this.handleClick}><a href="#">Birds</a></button>
+          <button value="tags:dragon" onClick={this.handleClick}><a href="#">Dragons</a></button>
+          <button value="tags:animals" onClick={this.handleClick}><a href="#">Random</a></button>
+        </div>
+
+{/* The click event and choice is handled through a ternary expression and passed on to the ArtSearch module */}
+{/* The module is designated to return its output here in the page */}
+            {
+              this.state.isClick ? <ArtSearch userChoice = {this.state.animalChoice}/> : null
+            }
+
+      </section>
 
     </div>
     );
