@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/oliver-kersey-project-five/precache-manifest.f919052927b0c321be7a36e0aee6b18c.js"
+  "/oliver-kersey-project-five/precache-manifest.4ac27221e4cf5c10cce9180a6cb53743.js"
 );
 
 self.addEventListener('message', (event) => {
